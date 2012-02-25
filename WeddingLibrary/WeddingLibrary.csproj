@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56934D21-31A0-41D8-A980-69D9650DE316}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeddingLibrary</RootNamespace>
+    <AssemblyName>WeddingLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibrary, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CommonDLL\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CommonDLL\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DataMapping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CommonDLL\DataMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Newtonsoft.Json.Net20, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CommonDLL\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\AppResult.cs" />
+    <Compile Include="App\ashx\User.cs" />
+    <Compile Include="App\ashx\Guest.cs" />
+    <Compile Include="App\Login.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Database\BusinessObject\BO_BigDate.cs" />
+    <Compile Include="Database\BusinessObject\BO_BigDateDetail.cs" />
+    <Compile Include="Database\BusinessObject\BO_Category.cs" />
+    <Compile Include="Database\BusinessObject\BO_Chair.cs" />
+    <Compile Include="Database\BusinessObject\BO_Decoration.cs" />
+    <Compile Include="Database\BusinessObject\BO_DecorationCat.cs" />
+    <Compile Include="Database\BusinessObject\BO_Guest.cs" />
+    <Compile Include="Database\BusinessObject\BO_Location.cs" />
+    <Compile Include="Database\BusinessObject\BO_Login.cs" />
+    <Compile Include="Database\BusinessObject\BO_MsgLog.cs" />
+    <Compile Include="Database\BusinessObject\BO_MsgTemplate.cs" />
+    <Compile Include="Database\BusinessObject\BO_Schedule.cs" />
+    <Compile Include="Database\BusinessObject\BO_Title.cs" />
+    <Compile Include="Database\BusinessObject\Query\BO_BigDateJoin.cs" />
+    <Compile Include="Database\BusinessObject\Query\BO_GuestJoin.cs" />
+    <Compile Include="Database\DataObject\DO_Title.cs" />
+    <Compile Include="Database\DataObject\DO_Schedule.cs" />
+    <Compile Include="Database\DataObject\DO_MsgTemplate.cs" />
+    <Compile Include="Database\DataObject\DO_MsgLog.cs" />
+    <Compile Include="Database\DataObject\DO_Login.cs" />
+    <Compile Include="Database\DataObject\DO_Location.cs" />
+    <Compile Include="Database\DataObject\DO_Guest.cs" />
+    <Compile Include="Database\DataObject\DO_DecorationCat.cs" />
+    <Compile Include="Database\DataObject\DO_Decoration.cs" />
+    <Compile Include="Database\DataObject\DO_Chair.cs" />
+    <Compile Include="Database\DataObject\DO_Category.cs" />
+    <Compile Include="Database\DataObject\DO_BigDateDetail.cs" />
+    <Compile Include="Database\DataObject\DO_BigDate.cs" />
+    <Compile Include="Database\DataObject\Query\DO_BigDateJoin.cs" />
+    <Compile Include="Database\DataObject\Query\DO_GuestJoin.cs" />
+    <Compile Include="Database\Imp\BigDate.cs" />
+    <Compile Include="Database\Imp\Category.cs" />
+    <Compile Include="Database\Imp\Guest.cs" />
+    <Compile Include="Database\Imp\Title.cs" />
+    <Compile Include="Database\Imp\Util.cs" />
+    <Compile Include="Definition.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Functions\Common.cs" />
+    <Compile Include="Functions\EmailHelper.cs" />
+    <Compile Include="Initialize.cs" />
+    <Compile Include="Logging\Files\Log.cs" />
+    <Compile Include="OriginalSettings.cs" />
+    <Compile Include="Profiles\Entities\UO_BigDate.cs" />
+    <Compile Include="Profiles\Entities\UO_User.cs" />
+    <Compile Include="Profiles\Imp\Login.cs" />
+    <Compile Include="Profiles\LoginProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionHelper.cs" />
+    <Compile Include="SessionObject.cs" />
+    <Compile Include="Web\TemplatePagingControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\Global.cs" />
+    <Compile Include="Web\Imp\Category.cs" />
+    <Compile Include="Web\Imp\Title.cs" />
+    <Compile Include="Web\Imp\Util.cs" />
+    <Compile Include="Web\JsonHelper.cs" />
+    <Compile Include="Web\TemplateCallbackPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TemplateControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TemplateMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\TemplatePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
