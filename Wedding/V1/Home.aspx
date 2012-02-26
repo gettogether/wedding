@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div id="content-index" style="margin-top: 10px;">
+    <div id="content-index">
         <div style="float: left; width: 60%;">
             <div class="box-content">
                 <div class="box-title">
@@ -28,7 +28,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="box-content" style="margin-top: 10px;">
+            <div class="box-content">
                 <div class="box-title">
                     賓客回應</div>
                 <div style="padding: 5px 5px;">
@@ -48,14 +48,14 @@
             </div>
         </div>
     </div>
-    <div id="content-party" style="margin-top: 10px; display: none;">
+    <div id="content-party" style="display: none;">
         <div id="party-guest" class="box-content">
             <div class="box-title">
                 賓客列表</div>
             <div style="padding: 5px 5px;">
             <div id="dv-guest-search-form">
-            客人名稱(英文):<input type="text" class="txt" id="GuestSch_GuestName_en_us" />
-            客人名稱(中文):<input type="text" class="txt" id="GuestSch_GuestName_zh_tw" />
+            客人名稱(英文):<input type="text" class="txt" id="GuestSch_GuestName_en_us" style="width:100px;" />
+            客人名稱(中文):<input type="text" class="txt" id="GuestSch_GuestName_zh_tw" style="width:100px;" />
             <input type="button" class="btn1" value="刷新" onclick="GuestSearch();"/>
             
             </div>

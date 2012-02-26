@@ -1,7 +1,28 @@
-﻿body
-{
-	font-size: 11pt;
-}
+﻿
+body { 
+background-color: rgb(248, 182, 183);
+background-image: url("../images/bg.gif");
+background-repeat: repeat-x;
+border-bottom-width: 0px;
+border-left-width: 0px;
+border-right-width: 0px;
+border-top-width: 0px;
+color: rgb(0, 0, 0);
+font-family: "verdana", "宋体";
+font-size: 11pt;
+
+
+
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+text-decoration: none;
+ }
 a:link
 {
 	text-decoration: none;
@@ -66,11 +87,13 @@ a:visited
 	/*margin:-23px 0px 0px 0px;*/
 	text-align: center;
 	width: 1000px;
+	background-color:#fff;
 }
 #lay_header
 {
 	float: left;
-	margin-top: -8px;
+	
+	margin-bottom:10px;
 }
 
 
@@ -79,6 +102,7 @@ a:visited
 	float: left;
 	min-height: 550px;
 	font-size:11pt;
+	background-color:#fff;
 }
 #lay_footer
 {
@@ -88,6 +112,7 @@ a:visited
 {
 	float: left;
 	width: 100%;
+	
 }
 #lay_menu
 {
@@ -317,7 +342,7 @@ background-color: rgb(213, 239, 252);
 border-bottom-color: rgb(193, 200, 210);
 border-bottom-style: solid;
 border-bottom-width: 1px;
-padding:2px 2px;
+
  }
 /*Start for Area*/
 .inner-circle

@@ -4,7 +4,7 @@
 });
 $(document).ready(function(){
     $('#CircleGroup .outer-circle').each(function(i){
-        $.CircleControl._Create($(this).attr('Id'), {left:i*100+200+'px',top:'200px'});
+        $.CircleControl._Create($(this).attr('Id'), {left:i*130+220+'px',top:'200px'});
     });
 });
 function fIndex(){
@@ -87,4 +87,8 @@ function LoadGuest(gCode){
         $('#dv-guest-edit-'+gCode).html(t).attr('class','box3').show();
         $('#tr-guest-'+gCode).attr('class','title');
     });
+}
+function ShowQRC(guestCode){
+    ShowBackgroup('lay_content');
+    ShowDiv("<img src='qrc.aspx?q="+guestCode+"&r="+Math.random()+"' style='border:none;margin-bottom:10px;' alt='Loading guest information...' /><div style='text-align:center;margin:-4px 0px 5px 0px;'><input onclick='CM();' type='button' id=\"_MsgBtn\" class='btn2' onmouseover='this.className=\"btn1\";' onmouseout='this.className=\"btn2\";' value='關閉' /></div>", 350, 380, "#FFB97A", "MSGBOX", 0, 0, 'lay_content');
 }

@@ -61,7 +61,7 @@
                         <%=GetSortHeader("修改日期", "UpdateOn")%>
                     </td>
                     <td class="td-2">
-                        已發邀請
+                        邀請
                     </td>
                 </tr>
             </HeaderTemplate>
@@ -90,7 +90,7 @@
                         <%#Eval("GuestMobile")%>
                     </td>
                     <td>
-                        <%#(int)Eval("GuestAttended")==0?"未":"是"%>
+                        <a href="javascript:;;" onclick="ShowQRC('<%#Eval("GuestCode") %>');"><%#(int)Eval("GuestAttended")==0?"未":"是"%></a>
                     </td>
                     <td>
                         <%#CommonLibrary.Utility.DateHelper.FormatDateTimeToString((DateTime)Eval("CreateOn"), CommonLibrary.Utility.DateHelper.DateFormat.yyMMddHHmms)%>

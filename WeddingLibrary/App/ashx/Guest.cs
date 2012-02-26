@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.SessionState;
 using WeddingLibrary.Database.BusinessObject;
 using WeddingLibrary.Database.DataObject;
+using System.Collections.Generic;
 
 namespace WeddingLibrary.App.ashx
 {
@@ -53,6 +54,57 @@ namespace WeddingLibrary.App.ashx
                             if (WeddingLibrary.Database.BusinessObject.BO_Guest.UpdateObject(editGuest, currentSession.Profile.BigDate.BigDateCode, editGuest.GuestCode))
                             {
                                 WeddingLibrary.Web.JsonHelper.JsonSuccess();
+                            }
+                            else
+                            {
+                                context.Response.Write(AppResult<string>.GetResult("更新失敗"));
+                            }
+                        }
+                        else
+                        {
+                            context.Response.Write(AppResult<string>.GetResult("找不到該客人信息"));
+                        }
+                        done = true;
+                    }
+                    else if (operaType == "get")
+                    {
+                        DO_GuestJoin.UO_GuestJoin uoSeach = new DO_GuestJoin.UO_GuestJoin();
+                        string Sort = context.Request["SortBy"];
+                        if (string.IsNullOrEmpty(Sort)) Sort = DO_GuestJoin.Columns.GuestName_en_us.ToString();
+                        bool IsAsc = CommonLibrary.Utility.NumberHelper.ToInt(context.Request["IsAsc"], 0) == 1;
+                        int pageSize = CommonLibrary.Utility.NumberHelper.ToInt(context.Request["pageSize"], 0);
+                        if (pageSize == 0) pageSize = 10;
+                        int pageIndex = CommonLibrary.Utility.NumberHelper.ToInt(context.Request["PageIndex"], 1);
+                        uoSeach.BigDateCode = currentSession.Profile.BigDate.BigDateCode;
+                        CommonLibrary.WebObject.WebHelper.SetValues<DO_GuestJoin.UO_GuestJoin>(uoSeach, "GuestSch");
+                        DataAccess.Data.PagingResult<DO_GuestJoin.UO_GuestJoin, DO_GuestJoin.UOList_GuestJoin> data = BO_GuestJoin.GetPagingList(uoSeach, pageIndex, pageSize, Sort, IsAsc);
+                        if (data.Total > 0)
+                        {
+                            foreach (Database.DataObject.DO_GuestJoin.UO_GuestJoin g in data.Result)
+                            {
+                                g.ConnInfo = null;
+                            }
+
+                            context.Response.Write(new AppResult<DataAccess.Data.PagingResult<DO_GuestJoin.UO_GuestJoin, DO_GuestJoin.UOList_GuestJoin>>(data, "").ToString());
+                        }
+                        else
+                        {
+                            context.Response.Write(AppResult<string>.GetResult("目前您的賓客列表是空的"));
+                        }
+                        done = true;
+                    }
+                    else if (operaType == "edit")
+                    {
+                        DO_Guest.UO_Guest editGuest = WeddingLibrary.Database.Imp.Guest.GetObjectByBigDateCodeAndGuestCode(currentSession.Profile.BigDate.BigDateCode, context.Request["guestCode"]);
+                        if (editGuest != null)
+                        {
+                            CommonLibrary.WebObject.WebHelper.SetValues<DO_Guest.UO_Guest>(editGuest, "Guest_");
+                            editGuest.BigDateCode = currentSession.Profile.BigDate.BigDateCode;
+                            editGuest.UpdateBy = currentSession.Profile.LoginUser.LoginEmail;
+                            editGuest.UpdateOn = DataAccess.DateTimeValues.DbTime;
+                            if (WeddingLibrary.Database.BusinessObject.BO_Guest.UpdateObject(editGuest, currentSession.Profile.BigDate.BigDateCode, editGuest.GuestCode))
+                            {
+                                context.Response.Write(AppResult<string>.GetResult(""));
                             }
                             else
                             {

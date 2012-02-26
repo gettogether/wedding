@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="QRC.aspx.cs" Inherits="V1_QRC" %>
