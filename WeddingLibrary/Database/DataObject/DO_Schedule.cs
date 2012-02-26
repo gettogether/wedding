@@ -66,7 +66,7 @@ namespace WeddingLibrary.Database.DataObject
             /// <summary>
             ///Primary Key,Database Type:varchar,Max Length:50,Is Nullable:NO
             /// </summary>
-            [Mapping("BigDateCode,un-insert,un-update")]
+            [Mapping("BigDateCode,un-update")]
             public string BigDateCode
             {
                 get
@@ -82,7 +82,7 @@ namespace WeddingLibrary.Database.DataObject
             /// <summary>
             ///Primary Key,Database Type:varchar,Max Length:50,Is Nullable:NO
             /// </summary>
-            [Mapping("ScheduleCode,un-insert,un-update")]
+            [Mapping("ScheduleCode,un-update")]
             public string ScheduleCode
             {
                 get

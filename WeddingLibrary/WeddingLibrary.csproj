@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\ashx\Schedule.cs" />
     <Compile Include="App\Entities\AppResult.cs" />
     <Compile Include="App\ashx\User.cs" />
     <Compile Include="App\ashx\Guest.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Database\Imp\BigDate.cs" />
     <Compile Include="Database\Imp\Category.cs" />
     <Compile Include="Database\Imp\Guest.cs" />
+    <Compile Include="Database\Imp\Schedule.cs" />
     <Compile Include="Database\Imp\Title.cs" />
     <Compile Include="Database\Imp\Util.cs" />
     <Compile Include="Definition.cs" />
